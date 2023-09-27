@@ -6,7 +6,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.smartsolution.heroeslibrary.R
 import com.smartsolution.heroeslibrary.data.repository.core.SuperHeroItemResponse
-import com.smartsolution.heroeslibrary.databinding.ItemSuperheroBinding
+import com.smartsolution.heroeslibrary.databinding.ItemSuperHeroBinding
 import com.squareup.picasso.Picasso
 
 class SuperheroAdapter(
@@ -22,7 +22,7 @@ class SuperheroAdapter(
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SuperheroViewHolder {
         val layoutInflater = LayoutInflater.from(parent.context)
-        return SuperheroViewHolder(layoutInflater.inflate(R.layout.item_superhero, parent, false))
+        return SuperheroViewHolder(layoutInflater.inflate(R.layout.item_super_hero, parent, false))
     }
 
     override fun onBindViewHolder(viewHolder: SuperheroViewHolder, position: Int) {
@@ -34,7 +34,7 @@ class SuperheroAdapter(
 }
 
 class SuperheroViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-    private val binding = ItemSuperheroBinding.bind(itemView)
+    private val binding = ItemSuperHeroBinding.bind(itemView)
 
     fun renderCard(superHero: SuperHeroItemResponse, onItemSelected: (String) -> Unit) {
         binding.tvSuperheroName.text = superHero.name

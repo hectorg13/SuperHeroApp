@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.views.HeroProfileFragment">
+    tools:context=".ui.views.SuperHeroProfileFragment">
 
     <ImageView
         android:id="@+id/ivSuperhero"
@@ -19,7 +19,9 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginTop="220dp"
-        android:elevation="8dp"
+        android:layout_marginBottom="-30dp"
+        android:elevation="@dimen/cards_elevation"
+        app:cardBackgroundColor="@color/background_secondary"
         app:cardCornerRadius="42dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -39,7 +41,16 @@
                 android:textColor="@color/black"
                 android:textSize="28sp"
                 android:textStyle="bold"
-                tools:text="AristiDevs" />
+                tools:text="Superhero" />
+
+            <TextView
+                android:id="@+id/tv_title_real__name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/margin_large"
+                android:fontFamily="sans-serif-light"
+                android:text="Real Name"
+                android:textSize="12sp" />
 
             <TextView
                 android:id="@+id/tvSuperheroRealName"
@@ -47,21 +58,82 @@
                 android:layout_height="wrap_content"
                 android:gravity="center_horizontal"
                 android:textColor="@color/black"
+                android:textSize="16sp"
                 android:textStyle="italic"
-                tools:text="AristiDevs" />
+                tools:text="real name" />
+
+            <TextView
+                android:id="@+id/tv_title_comic"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/margin_large"
+                android:layout_marginVertical="@dimen/margin_small"
+                android:layout_marginBottom="@dimen/margin_small"
+                android:fontFamily="sans-serif-light"
+                android:text="Comic"
+                android:textSize="12sp" />
 
             <TextView
                 android:id="@+id/tvPublisher"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center_horizontal"
-                android:textSize="11sp"
-                tools:text="AristiDevs" />
+                android:textSize="12sp"
+                tools:text="Comic" />
+
+            <TextView
+                android:id="@+id/tv_title_occupation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/margin_large"
+                android:layout_marginVertical="@dimen/margin_small"
+                android:layout_marginBottom="@dimen/margin_small"
+                android:fontFamily="sans-serif-light"
+                android:text="Occupation"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/tv_ocupation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text="Occupation"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/tv_title_location"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/margin_large"
+                android:layout_marginVertical="@dimen/margin_small"
+                android:layout_marginBottom="@dimen/margin_small"
+                android:fontFamily="sans-serif-light"
+                android:text="Location"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/tv_location"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text="Ubication"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/tv_title_skills"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/margin_large"
+                android:layout_marginVertical="@dimen/margin_small"
+                android:layout_marginBottom="@dimen/margin_small"
+                android:fontFamily="sans-serif-light"
+                android:text="Skills"
+                android:textSize="12sp" />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
-                android:layout_marginHorizontal="16dp"
+                android:layout_marginHorizontal="@dimen/margin_large"
                 android:layout_marginTop="24dp"
                 android:gravity="bottom"
                 android:orientation="horizontal">
@@ -70,7 +142,7 @@
                     android:id="@+id/viewIntelligence"
                     android:layout_width="0dp"
                     android:layout_height="0dp"
-                    android:layout_marginHorizontal="4dp"
+                    android:layout_marginHorizontal="@dimen/margin_small"
                     android:layout_weight="1"
                     android:background="@color/superhero_stat_intelligence"></FrameLayout>
 
@@ -78,7 +150,7 @@
                     android:id="@+id/viewStrength"
                     android:layout_width="0dp"
                     android:layout_height="0dp"
-                    android:layout_marginHorizontal="4dp"
+                    android:layout_marginHorizontal="@dimen/margin_small"
                     android:layout_weight="1"
                     android:background="@color/superhero_stat_strength" />
 
@@ -86,7 +158,7 @@
                     android:id="@+id/viewSpeed"
                     android:layout_width="0dp"
                     android:layout_height="0dp"
-                    android:layout_marginHorizontal="4dp"
+                    android:layout_marginHorizontal="@dimen/margin_small"
                     android:layout_weight="1"
                     android:background="@color/superhero_stat_speed" />
 
@@ -94,7 +166,7 @@
                     android:id="@+id/viewDurability"
                     android:layout_width="0dp"
                     android:layout_height="0dp"
-                    android:layout_marginHorizontal="4dp"
+                    android:layout_marginHorizontal="@dimen/margin_small"
                     android:layout_weight="1"
                     android:background="@color/superhero_stat_durability" />
 
@@ -102,7 +174,7 @@
                     android:id="@+id/viewPower"
                     android:layout_width="0dp"
                     android:layout_height="0dp"
-                    android:layout_marginHorizontal="4dp"
+                    android:layout_marginHorizontal="@dimen/margin_small"
                     android:layout_weight="1"
                     android:background="@color/superhero_stat_power" />
 
@@ -110,7 +182,7 @@
                     android:id="@+id/viewCombat"
                     android:layout_width="0dp"
                     android:layout_height="0dp"
-                    android:layout_marginHorizontal="4dp"
+                    android:layout_marginHorizontal="@dimen/margin_small"
                     android:layout_weight="1"
                     android:background="@color/superhero_stat_combat" />
 
@@ -121,14 +193,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="16dp"
-                android:layout_marginTop="4dp"
+                android:layout_marginTop="@dimen/margin_small"
                 android:gravity="bottom"
                 android:orientation="horizontal">
 
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="4dp"
+                    android:layout_marginHorizontal="@dimen/margin_small"
                     android:layout_weight="1"
                     android:maxLines="1"
                     android:singleLine="true"
@@ -138,7 +210,7 @@
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="4dp"
+                    android:layout_marginHorizontal="@dimen/margin_small"
                     android:layout_weight="1"
                     android:maxLines="1"
                     android:singleLine="true"
@@ -148,7 +220,7 @@
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="4dp"
+                    android:layout_marginHorizontal="@dimen/margin_small"
                     android:layout_weight="1"
                     android:maxLines="1"
                     android:singleLine="true"
@@ -158,7 +230,7 @@
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="4dp"
+                    android:layout_marginHorizontal="@dimen/margin_small"
                     android:layout_weight="1"
                     android:maxLines="1"
                     android:singleLine="true"
@@ -168,7 +240,7 @@
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="4dp"
+                    android:layout_marginHorizontal="@dimen/margin_small"
                     android:layout_weight="1"
                     android:maxLines="1"
                     android:singleLine="true"
@@ -178,7 +250,7 @@
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="4dp"
+                    android:layout_marginHorizontal="@dimen/margin_small"
                     android:layout_weight="1"
                     android:maxLines="1"
                     android:singleLine="true"

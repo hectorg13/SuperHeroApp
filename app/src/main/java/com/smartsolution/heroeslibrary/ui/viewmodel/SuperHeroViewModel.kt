@@ -20,10 +20,10 @@ class SuperHeroViewModel : ViewModel() {
     val superHeroitem: LiveData<SuperHeroDetailResponse> = _superHeroItem
 
     private val _waitDownload = MutableLiveData<Boolean>()
-    val waitDownload : LiveData<Boolean> = _waitDownload
+    val waitDownload: LiveData<Boolean> = _waitDownload
 
     fun getSuperHeroFind(query: String) {
-        _waitDownload.value= true
+        _waitDownload.value = true
         viewModelScope.launch(Dispatchers.IO) {
             val myResponse = RetrofitClient.webService.getSuperheroes(query)
             if (myResponse.isSuccessful) {
@@ -38,13 +38,13 @@ class SuperHeroViewModel : ViewModel() {
     }
 
     fun getSuperHeroItem(id: String) {
-        _waitDownload.value= true
+        _waitDownload.value = true
         viewModelScope.launch(Dispatchers.IO) {
             val myResponse = RetrofitClient.webService.getSuperHeroDetail(id)
             if (myResponse.body() != null) {
                 withContext(Dispatchers.Main) {
                     _superHeroItem.value = myResponse.body()
-                    _waitDownload.value= false
+                    _waitDownload.value = false
                 }
             }
         }
@@ -53,5 +53,4 @@ class SuperHeroViewModel : ViewModel() {
     init {
         getSuperHeroFind("Super")
     }
-
 }

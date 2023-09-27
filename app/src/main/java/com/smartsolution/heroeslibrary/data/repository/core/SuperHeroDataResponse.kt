@@ -3,7 +3,6 @@ package com.smartsolution.heroeslibrary.data.repository.core
 import com.google.gson.annotations.SerializedName
 
 data class SuperHeroDataResponse(
-    @SerializedName("response") val response: String,
     @SerializedName("results") val superheroes: List<SuperHeroItemResponse>
 )
 

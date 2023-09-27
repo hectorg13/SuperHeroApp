@@ -3,26 +3,26 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/FirstFragment">
+    app:startDestination="@id/library_fragment">
 
     <fragment
-        android:id="@+id/FirstFragment"
+        android:id="@+id/library_fragment"
         android:name="com.smartsolution.heroeslibrary.ui.views.LibraryFragment"
         android:label="@string/first_fragment_label"
         tools:layout="@layout/fragment_library">
 
         <action
             android:id="@+id/action_FirstFragment_to_SecondFragment"
-            app:destination="@id/SecondFragment" />
+            app:destination="@id/super_hero_profile_fragment" />
     </fragment>
     <fragment
-        android:id="@+id/SecondFragment"
-        android:name="com.smartsolution.heroeslibrary.ui.views.HeroProfileFragment"
+        android:id="@+id/super_hero_profile_fragment"
+        android:name="com.smartsolution.heroeslibrary.ui.views.SuperHeroProfileFragment"
         android:label="@string/second_fragment_label"
-        tools:layout="@layout/fragment_hero_profile">
+        tools:layout="@layout/fragment_super_hero_profile">
 
         <action
             android:id="@+id/action_SecondFragment_to_FirstFragment"
-            app:destination="@id/FirstFragment" />
+            app:destination="@id/library_fragment" />
     </fragment>
 </navigation>
