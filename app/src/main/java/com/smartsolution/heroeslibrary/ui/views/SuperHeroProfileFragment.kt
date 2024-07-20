@@ -41,22 +41,26 @@ class SuperHeroProfileFragment : Fragment() {
     }
 
     private fun createUI(superhero: SuperHeroDetailResponse) {
-        Picasso.get().load(superhero.image.url).into(binding.ivSuperhero)
-        binding.tvSuperheroName.text = superhero.name
-        prepareStats(superhero.powerstats)
-        binding.tvSuperheroRealName.text = superhero.biography.fullName
-        binding.tvPublisher.text = superhero.biography.publisher
-        binding.tvOcupation.text = superhero.work.occupation
-        binding.tvLocation.text = superhero.work.base
+        binding.apply {
+            Picasso.get().load(superhero.image.url).into(binding.ivSuperhero)
+            tvSuperheroName.text = superhero.name
+            prepareStats(superhero.powerstats)
+            tvSuperheroRealName.text = superhero.biography.fullName
+            tvPublisher.text = superhero.biography.publisher
+            tvOcupation.text = superhero.work.occupation
+            tvLocation.text = superhero.work.base
+        }
     }
 
     private fun prepareStats(powerstats: PowerStatsResponse) {
-        updateHeight(binding.viewCombat, powerstats.combat)
-        updateHeight(binding.viewDurability, powerstats.durability)
-        updateHeight(binding.viewSpeed, powerstats.speed)
-        updateHeight(binding.viewStrength, powerstats.strength)
-        updateHeight(binding.viewIntelligence, powerstats.intelligence)
-        updateHeight(binding.viewPower, powerstats.power)
+        binding.apply {
+            updateHeight(viewCombat, powerstats.combat)
+            updateHeight(viewDurability, powerstats.durability)
+            updateHeight(viewSpeed, powerstats.speed)
+            updateHeight(viewStrength, powerstats.strength)
+            updateHeight(viewIntelligence, powerstats.intelligence)
+            updateHeight(viewPower, powerstats.power)
+        }
     }
 
     private fun updateHeight(view: View, stat: String) {

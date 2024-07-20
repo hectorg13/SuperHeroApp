@@ -54,10 +54,12 @@ class LibraryFragment : Fragment() {
     }
 
     private fun setupRecyclerView() {
-        adapter = SuperheroAdapter { superHeroID -> onItemSelected(superHeroID) }
-        binding.rvSuperheroList.setHasFixedSize(true)
-        binding.rvSuperheroList.layoutManager = LinearLayoutManager(requireContext())
-        binding.rvSuperheroList.adapter = adapter
+        binding.apply {
+            adapter = SuperheroAdapter { superHeroID -> onItemSelected(superHeroID) }
+            rvSuperheroList.setHasFixedSize(true)
+            rvSuperheroList.layoutManager = LinearLayoutManager(requireContext())
+            rvSuperheroList.adapter = adapter
+        }
     }
 
     private fun onItemSelected(id: String) {
